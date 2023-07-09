@@ -2,6 +2,7 @@
   "name": "merilynk-portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://myusername.github.io/index",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
