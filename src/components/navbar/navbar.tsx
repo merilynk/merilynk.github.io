@@ -1,7 +1,5 @@
 "use client";
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import { Box, Button, Toolbar, Typography } from '@mui/material';
 import "./navbar.scss"
 
 const sections = ["Home", "About", "Experience", "Projects"]
@@ -9,7 +7,18 @@ const sections = ["Home", "About", "Experience", "Projects"]
 export default function Navbar() {
   
   function goToSection(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
-    throw new Error('Function not implemented.');
+    const anchor = ((event.target as HTMLDivElement).ownerDocument || document).querySelector(
+      `#${event.currentTarget.innerText}`,
+    );
+
+    console.log(anchor);
+  
+    if (anchor) {
+      anchor.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
   }
 
   return (
@@ -21,7 +30,7 @@ export default function Navbar() {
             {section}
           </button>
         ))}
-        <a href='/public/ResumeSu23.pdf'><button id='resumeButton'>Resume</button></a>
+        <a href="https://docs.google.com/document/d/16565E3JcgCNGLd86mExEtuyjo9trK9le/edit?usp=sharing&ouid=112935524918440876995&rtpof=true&sd=true" target="_blank"><button id='resumeButton'>Resume</button></a>
       </div>
     </div>
   )

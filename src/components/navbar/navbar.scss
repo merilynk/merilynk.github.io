@@ -6,9 +6,11 @@ $gray: #424242;
 
 .navbar {
     display: flex;
+    position: fixed;
     justify-content: space-between;
     align-items: center;
     background: $accent-color;
+    width: 100vw;
     padding: 10px;
     padding-left: 5%;
     padding-right: 5%;
